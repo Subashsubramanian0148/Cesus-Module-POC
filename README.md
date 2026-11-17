@@ -16,6 +16,15 @@ npm run dev
 Open http://localhost:5173. It lands on Kevin Thomas › Mark Value Funding 401(K).
 Click **Vesting**, then **Edit**, to see the slide-over.
 
+## Deploy to Netlify
+
+`netlify.toml` already holds every setting (build command, `build` folder, Node 22,
+`--legacy-peer-deps`, and the single-page-app redirect).
+
+1. In Netlify choose **Add new site → Import an existing project → GitHub**.
+2. Pick this repository and branch `main`.
+3. Leave the build settings as Netlify fills them in from `netlify.toml`, and click **Deploy**.
+
 ## Where to look
 
 | You want to… | Open |
@@ -53,6 +62,7 @@ Click **Vesting**, then **Edit**, to see the slide-over.
 │   ├── SDUI/ utils/ config/      production, unchanged
 │   └── styles/ abstracts/ *.scss production global styles, unchanged
 ├── index.html                    loads src/poc/main.jsx
+├── netlify.toml                  Netlify build and redirect settings
 ├── vite.config.mjs               adds the POC swaps (login stub, icon shim)
 └── package.json
 ```

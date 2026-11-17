@@ -1,0 +1,15 @@
+# Netlify settings for the Census POC.
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Some production packages declare older React peer versions.
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Single-page app: send every URL to index.html so deep links work on refresh.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
